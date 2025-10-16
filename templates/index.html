@@ -1,1 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Health Advisor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>AI Personalized Health Advisor</h1>
+    <form action="/predict" method="post">
+        <label>Fever:</label><input type="checkbox" name="fever" value="1"><br>
+        <label>Cough:</label><input type="checkbox" name="cough" value="1"><br>
+        <label>Headache:</label><input type="checkbox" name="headache" value="1"><br>
+        <label>Body Pain:</label><input type="checkbox" name="body_pain" value="1"><br><br>
+        <button type="submit">Get Health Advice</button>
+    </form>
+</body>
+</html>
 
