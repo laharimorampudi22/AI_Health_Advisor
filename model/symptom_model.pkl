@@ -1,1 +1,2 @@
+model = pickle.load(open("model/symptom_model.pkl", "rb"))
 
