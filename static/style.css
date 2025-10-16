@@ -1,1 +1,13 @@
+body {
+    background: #f7f9fc;
+    font-family: Arial;
+    text-align: center;
+    padding: 40px;
+}
+form {
+    background: white;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+}
 
