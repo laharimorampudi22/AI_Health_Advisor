@@ -1,27 +1,30 @@
-from flask import Flask, render_template, request
-import pickle
-import numpy as np
-
-app = Flask(__name__)
-model = pickle.load(open('model/symptom_model.pkl', 'rb'))
-
-@app.route('/')
-def home():
-    return render_template('index.html')
-
 @app.route('/predict', methods=['POST'])
 def predict():
-    symptoms = [int(request.form.get(symptom, 0)) for symptom in ['fever','cough','headache','body_pain']]
-    prediction = model.predict([symptoms])[0]
+    # List of all symptoms
+    symptom_list = ['fever','cough','headache','body_pain','fatigue','nausea','loss_of_appetite']
     
+    # Convert form inputs to integers safely (0 if unchecked)
+    symptoms = []
+    for s in symptom_list:
+        value = request.form.get(s)
+        if value is None:
+            value = 0
+        symptoms.append(int(value))
+    
+    # Predict disease
+    pred = model.predict([symptoms])[0]
+    disease_name = le.inverse_transform([pred])[0]
+
     # Personalized advice
     advice = {
         "Flu": "Take rest, drink warm fluids, and consult doctor if fever persists.",
-        "Common Cold": "Stay hydrated, take vitamin C, and get enough sleep.",
-        "Malaria": "Seek immediate medical attention and get tested."
+        "Common Cold": "Stay hydrated, take vitamin C, and rest.",
+        "Malaria": "Get tested and follow prescribed medication.",
+        "Migraine": "Avoid stress and stay hydrated.",
+        "Dengue": "Drink fluids, avoid NSAIDs, and rest.",
+        "Food Poisoning": "Stay hydrated, eat light, avoid spicy foods.",
+        "COVID-19": "Isolate, stay hydrated, and seek medical help if symptoms worsen.",
+        "Typhoid": "Get a blood test and take antibiotics prescribed by doctor."
     }
-    return render_template('result.html', disease=prediction, advice=advice.get(prediction, "Consult a doctor."))
 
-if __name__ == '__main__':
-    app.run(debug=True)
-
+    return render_template('result.html', disease=disease_name, advice=advice.get(disease_name, "Consult a doctor."))
