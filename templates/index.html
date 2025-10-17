@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>AI Health Advisor</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <h1>AI Personalized Health Advisor</h1>
-    <form action="/predict" method="post">
-        <label>Fever:</label><input type="checkbox" name="fever" value="1"><br>
-        <label>Cough:</label><input type="checkbox" name="cough" value="1"><br>
-        <label>Headache:</label><input type="checkbox" name="headache" value="1"><br>
-        <label>Body Pain:</label><input type="checkbox" name="body_pain" value="1"><br><br>
-        <button type="submit">Get Health Advice</button>
-    </form>
-</body>
-</html>
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            display: inline-block;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .symptom {
+            margin: 10px 0;
+            text-align: left;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049
