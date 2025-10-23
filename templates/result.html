@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <title>Prediction Result</title>
     <style>
-        body { font-family: Arial; text-align: center; padding: 50px; background: #f2f2f2; }
+        body { font-family: Arial; text-align: center; background: #f2f2f2; padding: 50px; }
         .result { background: #fff; padding: 20px; border-radius: 10px; display: inline-block; }
+        a { display: block; margin-top: 20px; color: #4CAF50; text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="result">
         <h1>Predicted Disease: {{ disease }}</h1>
         <p>Advice: {{ advice }}</p>
-        <a href="/">Back</a>
+        <a href="/">Back to Home</a>
     </div>
 </body>
 </html>
