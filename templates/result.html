@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prediction Result</title>
-    <style>
-        body { font-family: Arial; text-align: center; background: #f2f2f2; padding: 50px; }
-        .result { background: #fff; padding: 20px; border-radius: 10px; display: inline-block; }
-        a { display: block; margin-top: 20px; color: #4CAF50; text-decoration: none; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result | AI Health Advisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="result">
-        <h1>Predicted Disease: {{ disease }}</h1>
-        <p>Advice: {{ advice }}</p>
-        <a href="/">Back to Home</a>
+    <div class="container result-card">
+        <h1 class="title">🩺 AI Health Advisor</h1>
+
+        <h2>Predicted Disease:</h2>
+        <p class="disease">{{ disease }}</p>
+
+        <h3>Advice:</h3>
+        <p class="advice">{{ advice }}</p>
+
+        <a href="/" class="btn">← Back to Home</a>
     </div>
+
+    <footer>
+        <p>© 2025 AI Health Advisor | Stay healthy 💚</p>
+    </footer>
 </body>
 </html>
