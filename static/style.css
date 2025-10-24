@@ -1,13 +1,82 @@
+/* General page styling */
 body {
-    background: #f7f9fc;
-    font-family: Arial;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #e8f5e9);
     text-align: center;
-    padding: 40px;
-}
-form {
-    background: white;
-    display: inline-block;
-    padding: 20px;
-    border-radius: 10px;
+    margin: 0;
+    padding: 0;
 }
 
+/* Container box */
+.container {
+    background-color: white;
+    width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Title */
+h1 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+/* Symptom checkboxes */
+.symptom-list {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.symptom-list label {
+    display: block;
+    padding: 6px 0;
+    font-size: 16px;
+}
+
+/* Counter text */
+#counter {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Button styling */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Result page */
+.result-card {
+    background-color: white;
+    padding: 40px;
+    width: 500px;
+    margin: 100px auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.disease {
+    color: #d32f2f;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.advice {
+    color: #333;
+    font-size: 18px;
+    margin-top: 10px;
+}
