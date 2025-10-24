@@ -2,29 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Health Advisor</title>
-    <style>
-        body { font-family: Arial; text-align: center; background: #f2f2f2; padding: 50px; }
-        form { background: #fff; padding: 20px; border-radius: 10px; display: inline-block; }
-        input[type="submit"] { padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        input[type="submit"]:hover { background: #45a049; }
-        .symptom { text-align: left; margin: 5px; }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>AI Health Advisor</h1>
-    <form action="/predict" method="post">
-        <div class="symptom">
-            <input type="checkbox" name="fever" value="1"> Fever<br>
-            <input type="checkbox" name="cough" value="1"> Cough<br>
-            <input type="checkbox" name="headache" value="1"> Headache<br>
-            <input type="checkbox" name="body_pain" value="1"> Body Pain<br>
-            <input type="checkbox" name="fatigue" value="1"> Fatigue<br>
-            <input type="checkbox" name="nausea" value="1"> Nausea<br>
-            <input type="checkbox" name="loss_of_appetite" value="1"> Loss of Appetite<br>
-        </div>
-        <br>
-        <input type="submit" value="Predict Disease">
-    </form>
+    <div class="container">
+        <h1 class="title">🩺 AI Health Advisor</h1>
+        <p class="subtitle">Select your symptoms below and get personalized health advice.</p>
+
+        <form action="/predict" method="post">
+            <div class="symptom-list">
+                <label><input type="checkbox" name="fever"> Fever</label>
+                <label><input type="checkbox" name="cough"> Cough</label>
+                <label><input type="checkbox" name="headache"> Headache</label>
+                <label><input type="checkbox" name="body_pain"> Body Pain</label>
+                <label><input type="checkbox" name="fatigue"> Fatigue</label>
+                <label><input type="checkbox" name="nausea"> Nausea</label>
+                <label><input type="checkbox" name="loss_of_appetite"> Loss of Appetite</label>
+            </div>
+
+            <p id="counter">Selected: 0 symptoms</p>
+
+            <button type="submit" class="btn">Predict Disease</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2025 AI Health Advisor | Built with Flask 🧠</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
