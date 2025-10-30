@@ -4,26 +4,22 @@
     <meta charset="UTF-8">
     <title>AI Health Advisor</title>
     <style>
-        body { font-family: Arial; text-align: center; background: #f2f2f2; padding: 50px; }
-        form { background: #fff; padding: 20px; border-radius: 10px; display: inline-block; }
-        input[type="submit"] { padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        body { font-family: Arial; text-align: center; background: #f4f4f4; padding: 40px; }
+        form { background: white; display: inline-block; padding: 30px; border-radius: 10px; }
+        input[type="submit"] { margin-top: 20px; padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
         input[type="submit"]:hover { background: #45a049; }
-        .symptom { text-align: left; margin: 5px; }
     </style>
 </head>
 <body>
     <h1>AI Health Advisor</h1>
     <form action="/predict" method="post">
-        <div class="symptom">
-            <input type="checkbox" name="fever" value="1"> Fever<br>
-            <input type="checkbox" name="cough" value="1"> Cough<br>
-            <input type="checkbox" name="headache" value="1"> Headache<br>
-            <input type="checkbox" name="body_pain" value="1"> Body Pain<br>
-            <input type="checkbox" name="fatigue" value="1"> Fatigue<br>
-            <input type="checkbox" name="nausea" value="1"> Nausea<br>
-            <input type="checkbox" name="loss_of_appetite" value="1"> Loss of Appetite<br>
-        </div>
-        <br>
+        <label><input type="checkbox" name="fever"> Fever</label><br>
+        <label><input type="checkbox" name="cough"> Cough</label><br>
+        <label><input type="checkbox" name="headache"> Headache</label><br>
+        <label><input type="checkbox" name="body_pain"> Body Pain</label><br>
+        <label><input type="checkbox" name="fatigue"> Fatigue</label><br>
+        <label><input type="checkbox" name="nausea"> Nausea</label><br>
+        <label><input type="checkbox" name="loss_of_appetite"> Loss of Appetite</label><br><br>
         <input type="submit" value="Predict Disease">
     </form>
 </body>
